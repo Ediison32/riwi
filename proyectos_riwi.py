@@ -7,7 +7,6 @@
  - para los numero d por ambos 3 y 5 imprime "FizzBuzz"
  - si el numero no es fivisible ni por 3 ni por 5 imprime el numero    
  
-'''
 
 for i in range(1, 101):
     
@@ -19,3 +18,23 @@ for i in range(1, 101):
         print("Buzz")
     else:
         print(i)
+        
+'''
+
+
+tex= ".upper() para mayusculas"
+x= (tex.upper()) #.UPPER() PARA MAYUSCULAS
+print(x)
+
+
+a = ".LOWER() PARA PONER EN MINUSCULAS  "
+b = a.lower()   #.lower() para poner en minusculas 
+print(b)
+
+
+#The split() method splits the string into substrings if it finds instances of the separator:
+
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+
+print(5>3)
