@@ -53,7 +53,7 @@ requerimientos
     - hacer ensayos incluyento casos extremos 
 
 '''
-
+facture ={ }
 date= "si"
 while ("si" in date):
     while True:
@@ -86,16 +86,17 @@ while ("si" in date):
             else:
                 print( "\t\tEl valor tiene que ser superiro a 0!")
                 continue
-        print("Error tiene que ser un numero ")
+        print("\t\t\Error tiene que ser un numero ")
 
 
     if (productQuantity >=12):
         #aplicar descuento 
         while True:
-                discountPercentage = input("v\t\por favor ingresar el /%/ de descuento ")
+                discountPercentage = input("\v\tPor favor ingresar el /%/ de descuento ")
                 if(discountPercentage.isnumeric()):
                     discountPercentage = float(discountPercentage)
                     if(discountPercentage> 0 and discountPercentage <= 100):
+                        discountPercentage = (discountPercentage/100)
                         break
                     else:
                         print( "\t\tEl valor tiene que ser entre 0 a 100%")
@@ -104,9 +105,17 @@ while ("si" in date):
     else:
         print("Para aplicar decuento necesita mas de 12 productos ")
         discountPercentage = 0.0 
+    
+    totalCost= productPrice * productQuantity
+    discount= totalCost * discountPercentage
+    totalDiscount = totalCost - discount 
+    print("|"+83*"-" + "|")
+    print("|\n|\t\t\t\t\t FACTURA\n|")
+    print("|\tProducto  | Total sin descuento | Descuento aplicado | Total con descuento  |\n|")
+    print(f"|\t{productName}\t   {totalCost:.2f}\t  \t  {discount:.2f}\t  \t     {totalDiscount:.2f}")
+    print("|\n"+84*"-" + "|")
 
 
+    #print(f"nombre del producto {productName}, precio del porducto por unidad {productPrice}, cantidad de producto {productQuantity} descuento aplicado {discountPercentage}")
 
-    print(f"nombre del producto {productName}, precio del porducto por unidad {productPrice}, cantidad de producto {productQuantity} descuento aplicado {discountPercentage}")
-
-    date=input("Deseas continuar con otro producto : si / no:  ")
+    date=input("\t\vDeseas continuar con otro producto : si / no:  ")
